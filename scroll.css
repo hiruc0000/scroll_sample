@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.7);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 90%;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+li {
+  margin: 0 0.5rem;
+}
+
+li > a {
+  padding: 0 1.5rem;
+  text-decoration: none;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.section1 {
+  margin-top: 53px;
+  background-color: teal;
+}
+.section2 {
+  background-color: mediumvioletred;
+}
+.section3 {
+  background-color: slateblue;
+}
+.section4 {
+  background-color: tomato;
+}
+
+
+/* TOPへ戻るボタンスタイル */
+.to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.to-top .top::after {
+  position: absolute;
+  content: '';
+  top: 17px;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}

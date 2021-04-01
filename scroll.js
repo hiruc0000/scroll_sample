@@ -2,8 +2,8 @@
   const scrollTrigger = document.querySelectorAll('a[href^="#"]');
 
   for (let i = 0; i < scrollTrigger.length; i++) {
-    scrollTrigger[i].addEventListener('click', (event) => {
-      event.preventDefault();
+    scrollTrigger[i].addEventListener('click', (e) => {
+      e.preventDefault();
 
       const href = scrollTrigger[i].getAttribute('href');
       const targetElement = document.querySelector(href);

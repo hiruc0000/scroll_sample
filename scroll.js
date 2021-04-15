@@ -10,9 +10,9 @@
 
       const rect = targetElement.getBoundingClientRect().top;
       const offset = pageYOffset;
-      let gap = 60;
+      let gap = 50;
       if(i === 0){
-        gap = gap +20;
+        gap = 60;
       }
       const target = rect + offset - gap;
 

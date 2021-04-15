@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST</title>
+    <style media="screen">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 80px;
+            width: 100%;
+            background-color: black;
+            transition: height 0.3s;
+        }
+
+        main {
+            height: 2500px;
+        }
+
+        footer {
+            height: 80px;
+            background-color: black;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            position: fixed;
+            right: 50px;
+            bottom: 40px;
+            opacity: 0;
+            z-index: -10;
+            transition: opacity 0.3s, bottom 0.3s;
+        }
+
+        .appear {
+            bottom: 50px;
+            opacity: 1;
+            z-index: 5;
+        }
+
+        .sticky {
+
+            width: 100%;
+            height: 60px;
+            border-bottom: 2px solid blue;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <div class="icon">
+            <span>上</span>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const icon = document.querySelector('.icon');
+
+            addStickyAndAppear(header, 'sticky', 80);
+            addStickyAndAppear(icon, 'appear', 400);
+        });
+
+        function addStickyAndAppear(element, addClass, pixel) {
+            const offset = pageYOffset;
+
+            if (offset > pixel && !element.classList.contains(addClass)) {
+                element.classList.add(addClass);
+            } else if (offset <= pixel && element.classList.contains(addClass)) {
+                element.classList.remove(addClass);
+            }
+        }
+    </script>
+</body>
+
+</html>

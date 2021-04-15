@@ -10,7 +10,7 @@
 
       const rect = targetElement.getBoundingClientRect().top;
       const offset = pageYOffset;
-      const gap = 53;
+      const gap = 60;
       const target = rect + offset - gap;
 
       scrollTo({
@@ -28,4 +28,25 @@
       behavior: 'smooth'
     });
   });
+
+  //スクロール時にクラスを付与する
+  document.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    const icon = document.querySelector('.to-top');
+
+    addStickyAndAppear(header, 'sticky', 80);
+    addStickyAndAppear(icon, 'appear', 500);
+  });
+
+
 })();
+
+function addStickyAndAppear(element, addClass, pixel) {
+  const offset = pageYOffset;
+
+  if (offset > pixel && !element.classList.contains(addClass)) {
+    element.classList.add(addClass);
+  } else if (offset <= pixel && element.classList.contains(addClass)) {
+    element.classList.remove(addClass);
+  }
+}

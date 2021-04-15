@@ -10,10 +10,7 @@
 
       const rect = targetElement.getBoundingClientRect().top;
       const offset = pageYOffset;
-      let gap = 50;
-      if(i === 0){
-        gap = 60;
-      }
+      let gap = i === 0 ? 60 : 50;
       const target = rect + offset - gap;
 
       scrollTo({
